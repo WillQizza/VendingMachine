@@ -1,0 +1,19 @@
+@let item = slot();
+<button
+	type="button"
+	class="card"
+	[disabled]="soldOut()"
+	[attr.aria-label]="item.slot + ' ' + item.name + ', ' + stockLabel()"
+	[title]="item.description"
+	(click)="choose()"
+>
+	<span class="top">
+		<span class="code">{{ item.slot }}</span>
+		<span class="stock">{{ stockLabel() }}</span>
+	</span>
+	<span class="body">
+		<span class="name">{{ item.name }}</span>
+		<span class="price">{{ item.price | currency }}</span>
+		<span class="coil" aria-hidden="true"></span>
+	</span>
+</button>

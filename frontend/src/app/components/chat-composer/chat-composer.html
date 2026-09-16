@@ -1,0 +1,18 @@
+<form class="composer" (submit)="submit($event)">
+	<label class="visually-hidden" for="chat-composer-input">Message the machine</label>
+	<input
+		id="chat-composer-input"
+		class="field"
+		type="text"
+		autocomplete="off"
+		[placeholder]="placeholder()"
+		[value]="draft()"
+		[disabled]="disabled()"
+		(input)="updateDraft($event)"
+	/>
+	<button class="send" type="submit" [disabled]="!canSend()" aria-label="Send message">
+		<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+			<path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</button>
+</form>

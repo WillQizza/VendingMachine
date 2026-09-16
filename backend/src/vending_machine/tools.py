@@ -12,11 +12,17 @@ _INVENTORY = {
 _INVENTORY_LOCK = threading.Lock()
 
 
+def list_inventory_slots() -> list[dict]:
+    """Shared with the inventory router. 
+        TODO: Need to replace this later once I setup the db"""
+    with _INVENTORY_LOCK:
+        return [{"slot": slot, **item} for slot, item in _INVENTORY.items()]
+
+
 @tool
 def list_inventory() -> list[dict]:
     """List every slot with its name, price, description, and remaining stock."""
-    with _INVENTORY_LOCK:
-        return [{"slot": slot, **item} for slot, item in _INVENTORY.items()]
+    return list_inventory_slots()
 
 
 @tool

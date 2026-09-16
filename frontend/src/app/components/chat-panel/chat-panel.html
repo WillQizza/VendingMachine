@@ -1,0 +1,15 @@
+<header class="head">
+	<h2 class="title">{{ title() }}</h2>
+	<p class="subtitle">{{ subtitle() }}</p>
+</header>
+
+<div #log class="log" role="log" aria-live="polite">
+	<p class="status">{{ onlineLabel() }}</p>
+	@for (message of messages(); track message.id) {
+		<app-chat-message [message]="message" />
+	}
+</div>
+
+<footer class="foot">
+	<app-chat-composer [disabled]="busy()" (send)="send.emit($event)" />
+</footer>

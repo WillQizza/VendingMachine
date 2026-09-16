@@ -1,0 +1,64 @@
+:host {
+	display: block;
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+	gap: 1.5rem;
+	align-items: stretch;
+	max-width: 72rem;
+	min-height: 100dvh;
+	margin: 0 auto;
+	padding: 1.25rem;
+	box-sizing: border-box;
+}
+
+.machine {
+	padding: 1.5rem;
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	background: var(--surface);
+	box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+.machine-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin-bottom: 1.25rem;
+}
+
+.machine-title {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+}
+
+.machine-hint {
+	margin: 0;
+	font-size: 0.875rem;
+	color: var(--ink-soft);
+}
+
+.chat {
+	max-height: calc(100dvh - 2.5rem);
+	position: sticky;
+	top: 1.25rem;
+}
+
+@media (max-width: 900px) {
+	.layout {
+		grid-template-columns: minmax(0, 1fr);
+		min-height: auto;
+	}
+
+	.chat {
+		position: static;
+		height: 32rem;
+		max-height: none;
+	}
+}

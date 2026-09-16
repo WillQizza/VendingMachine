@@ -1,0 +1,11 @@
+@let item = message();
+<span class="author">{{ author() }}</span>
+<div class="bubble" [attr.aria-busy]="item.streaming">
+	@if (pending()) {
+		<span class="typing" aria-label="The machine is thinking">
+			<span></span><span></span><span></span>
+		</span>
+	} @else {
+		{{ item.content }}
+	}
+</div>

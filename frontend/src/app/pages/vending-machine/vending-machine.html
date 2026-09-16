@@ -1,0 +1,22 @@
+<main class="layout">
+	<section class="machine" aria-labelledby="machine-title">
+		<header class="machine-head">
+			<h1 id="machine-title" class="machine-title">Vending Machine</h1>
+			<p class="machine-hint">Click a slot, or ask the machine.</p>
+		</header>
+		<app-slot-grid
+			[rows]="rows()"
+			[loading]="inventoryLoading()"
+			[failed]="inventoryFailed()"
+			(slotSelected)="chooseSlot($event)"
+		/>
+	</section>
+
+	<app-chat-panel
+		class="chat"
+		[messages]="messages()"
+		[onlineCount]="onlineCount()"
+		[busy]="busy()"
+		(send)="send($event)"
+	/>
+</main>

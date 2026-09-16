@@ -15,6 +15,7 @@ This directory contains the Python backend for the VendingMachine project. It us
 |   |-- test_ai_config.py         AI configuration and provider tests
 |   |-- test_conversations.py     Conversation manager tests
 |   |-- test_conversation_api.py  FastAPI conversation API tests
+|   |-- test_inventory_api.py     FastAPI inventory API tests
 |   |-- test_tools.py             Vending tool tests
 |   `-- test_tool_agent.py        Tool-agent graph tests
 |-- src/vending_machine/
@@ -24,6 +25,7 @@ This directory contains the Python backend for the VendingMachine project. It us
 |   |-- tools.py                  Vending inventory and purchase tools
 |   |-- api/
 |   |   |-- conversations.py       Streaming conversation routes
+|   |   |-- inventory.py           Inventory read routes
 |   |   |-- router.py              Top-level HTTP router
 |   |   `-- schemas.py             HTTP request and response schemas
 |   |-- ai/

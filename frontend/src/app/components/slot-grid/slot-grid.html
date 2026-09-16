@@ -1,0 +1,17 @@
+@for (row of rows(); track row.row) {
+	<section class="shelf" [attr.aria-label]="'Row ' + row.row">
+		<div class="slots">
+			@for (slot of row.slots; track slot.slot) {
+				<app-slot-card [slot]="slot" (select)="slotSelected.emit($event)" />
+			}
+		</div>
+	</section>
+} @empty {
+	@if (loading()) {
+		<p class="empty">Reading the machine...</p>
+	} @else if (failed()) {
+		<p class="empty">The machine isn't reporting its stock right now.</p>
+	} @else {
+		<p class="empty">No slots are online.</p>
+	}
+}

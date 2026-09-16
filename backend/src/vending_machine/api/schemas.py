@@ -17,3 +17,11 @@ class ConversationMessage(BaseModel):
         if content == "":
             raise ValueError("content cannot be empty")
         return content
+
+
+class InventorySlot(BaseModel):
+    slot: str
+    name: str
+    price: float
+    stock: int
+    description: str

@@ -3,6 +3,7 @@
 from fastapi import APIRouter
 
 from vending_machine.api.conversations import router as conversations_router
+from vending_machine.api.inventory import router as inventory_router
 
 
 router = APIRouter()
@@ -14,3 +15,4 @@ def root() -> dict[str, str]:
 
 
 router.include_router(conversations_router)
+router.include_router(inventory_router)
