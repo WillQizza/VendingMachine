@@ -69,6 +69,7 @@ Run the backend and frontend in separate terminals during development.
 - `GET /` returns a service health response.
 - `POST /conversations` creates a conversation.
 - `POST /conversations/{conversation_id}/messages` streams assistant output as server-sent events.
+- `GET /inventory` returns every slot in the vending machine.
 
 ## Testing And Builds
 
